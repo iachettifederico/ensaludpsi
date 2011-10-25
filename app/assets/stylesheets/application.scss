@@ -1,0 +1,436 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree . 
+*/
+
+/* Fuentes elegidas */
+
+@font-face {
+    font-family: 'contra';
+    src: url('/fonts/contra-webfont.eot');
+    src: url('/fonts/contra-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/contra-webfont.woff') format('woff'),
+         url('/fonts/contra-webfont.ttf') format('truetype'),
+         url('/fonts/contra-webfont.svg#CarbonTypeRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FFF_Tusj';
+    src: url('/fonts/FFF_Tusj-webfont.eot');
+    src: url('/fonts/FFF_Tusj-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/FFF_Tusj-webfont.woff') format('woff'),
+         url('/fonts/FFF_Tusj-webfont.ttf') format('truetype'),
+         url('/fonts/FFF_Tusj-webfont.svg#CarbonTypeRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'angelina';
+    src: url('/fonts/angelina-webfont.eot');
+    src: url('/fonts/angelina-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/angelina-webfont.woff') format('woff'),
+         url('/fonts/angelina-webfont.ttf') format('truetype'),
+         url('/fonts/angelina-webfont.svg#HartingPlain') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Fin Fuentes */
+
+body{
+	font: 15px/19px 'contra', Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #FAF0E1;
+	background-image: url(/assets/dandelion.png), url(/assets/background.jpg);
+	background-repeat: no-repeat, repeat;
+	background-position: right bottom; 
+}
+
+div{
+	word-wrap: break-word;
+}
+
+ul{
+	list-style: none;
+}
+
+/* Layout */
+#principal{
+	display: -moz-box;
+	display: -o-box;
+	display: -webkit-box;
+	display: box;
+	-moz-box-orient: vertical;
+	-o-box-orient: vertical;
+	-webkit-box-orient: vertical;
+	box-orient: vertical;
+	
+}
+
+#centro{
+	background-color: transparent;
+	display: -moz-box;
+	display: -o-box;
+	display: -webkit-box;
+	display: box;
+	-moz-box-orient: horizontal;
+	-o-box-orient: horizontal;
+	-webkit-box-orient: horizontal;
+	box-orient: horizontal;
+	min-height: 400px;
+}
+
+#pie{
+	box-orient: horizontal;
+	min-height: 50px;
+	margin: 15px 5px 5px 5px;
+}
+
+#leftSidebar{
+	box-orient: horizontal;
+	min-width: 150px;
+	-moz-box-flex: 1;
+	-o-box-flex: 1;
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	padding: 5px;
+	margin: 5px;
+}
+
+#contents{
+	box-orient: horizontal;
+	-moz-box-flex: 15;
+	-o-box-flex: 15;
+	-webkit-box-flex: 15;
+	box-flex: 15;
+	padding: 5px 15px 5px 15px;
+	margin: -45px 15px 15px 15px;
+}
+
+#rightSidebar{
+	box-orient: horizontal;
+	min-width: 150px;
+	-moz-box-flex: 1;
+	-o-box-flex: 1;
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	padding: 5px;
+	margin: 5px;
+}
+
+/* Fin Layout */
+
+.round{
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+}
+
+.boxShadow{
+	-moz-box-shadow: 5px 5px 8px hsla(0, 0%, 0%, .3);
+	-webkit-box-shadow: 5px 5px 8px hsla(0, 0%, 0%, .3);
+	box-shadow: 5px 5px 8px hsla(0, 0%, 0%, .3);
+}
+
+/* Contenidos */
+
+.contentBox{
+	background-color: hsla( 34, 37%, 95%, .8);
+}
+
+.contentTitle{
+	color: #5D2B2B;
+	/*font: 20px/27px 'CarbonTypeRegular', Arial, sans-serif;*/
+	font-size: 25px;
+	margin: 15px;
+}
+
+.contentBody{
+	color: #823F00;
+	padding: 0 10px 0 10px;
+	margin: 10px 30px;
+	
+}
+
+.contents{
+	margin: 0 0 5px 0;
+	border-bottom: 1px solid #BFBFBF;
+	text-align: justify;
+}
+
+.contents:hover{
+	text-shadow: 3px 3px 3px hsla(0, 0%, 0%, .2);
+}
+
+/* Header */
+
+#cabecera{
+	box-orient: horizontal;
+	min-height: 180px;
+}
+
+#nombre{
+	position: absolute;
+	left: 125px;
+	top: 120px;
+	font: 20px/27px 'FFF_Tusj', Arial, sans-serif;
+	font-size: 48px;
+	text-shadow: 2px 2px 2px hsla(0, 0%, 60%, .8);
+}
+
+#logo{
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	height: 150px;
+}
+
+#logo:hover{
+	-moz-transform: rotate(-5deg);
+	-webkit-transform: rotate(-5deg);
+	-o-transform: rotate(-5deg);
+	transform: rotate(-5deg);
+}
+
+#menuContainer{
+	position: relative;
+	top: 80px;
+	width: 100%;
+	display: -moz-box;
+	display: -o-box;
+	display: -webkit-box;
+	display: box;
+	
+	box-orient: horizontal;
+}
+
+#menu{
+	padding: 0 5px 0 5px;
+	top: 80px;
+	height: 40px;
+	border-bottom: 4px dotted #B4BDC3;
+	overflow-x: visible;
+	overflow-y: hidden;
+	text-align: center;
+
+  ul{
+	  list-style: none;
+  }
+}
+
+.menuItem{
+	position: relative;
+	top: 11px;
+	display: inline;
+	height: 100px;
+	width: 100px;
+	
+	margin-left: 2px;
+	margin-right: 2px;
+	padding: 7px 5px 9px 5px;
+	border: 2px solid #662626;
+	
+	background-color: #DCBA87;
+	
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	
+	-moz-box-shadow: 2px 2px 3px hsla(0, 0%, 0%, .6);
+	-webkit-box-shadow: 2px 2px 3px hsla(0, 0%, 0%, .6);
+	box-shadow: 2px 2px 3px hsla(0, 0%, 0%, .6);
+	
+  a{
+	  text-decoration: none;	
+	  color: #4F1B1B;
+  }
+}
+
+.menuItem:hover{
+	top: 5px;
+}
+
+/* Menú de usuario */
+
+#userMenu{
+	position: absolute;
+	top: 10px;
+	right: 18px;
+	height: 30px;
+	text-align: center;
+	
+	background-color: hsla( 34, 37%, 95%, .5);
+	
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+	
+	-moz-box-shadow: 5px 5px 8px hsla(0, 0%, 0%, .3);
+	-webkit-box-shadow: 5px 5px 8px hsla(0, 0%, 0%, .3);
+	box-shadow: 5px 5px 8px hsla(0, 0%, 0%, .3);
+	display:block;
+
+  li{
+	  float: left;
+	  margin: 5px 3px auto 3px;
+	  padding: 0 5px 0 5px;
+  }
+
+  ul{
+	  margin-top: 0;
+	  margin-right: 10;
+  }
+
+  img{
+	  height: 28px;
+	  margin-top: -5px;
+  }
+}
+
+/* Frase Ghandi */
+
+#gandhi{
+	position: absolute;
+	top: 50px;
+	right: 20px;
+	margin: 0 auto;
+	background-color: hsla( 34, 37%, 80%, .5);
+	/*background-color: hsla(280, 40%, 70%, .5);*/
+	width: 450px;
+	padding: 10px;
+	
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+	
+	-moz-box-shadow: 5px 5px 8px hsla(0, 0%, 0%, .3);
+	-webkit-box-shadow: 5px 5px 8px hsla(0, 0%, 0%, .3);
+	box-shadow: 5px 5px 8px hsla(0, 0%, 0%, .3);
+	/*font: 18px/27px 'HartingPlain', Arial, sans-serif;*/
+	font: 20px/27px 'angelina', Arial, sans-serif;
+	letter-spacing: 1px;
+
+  .frase{
+  	font-size: 30px;
+  	color: #4D4D4D;
+  	text-shadow: 1px 1px 1px hsla(0, 0%, 100%, .8);
+  	text-align: center;
+  }
+  
+  .firma{	
+  	font-size: 18px;
+  	font-style: italic;
+  	text-align: right;
+  	color: #777777;
+  	/*text-shadow: 1px 1px 1px hsla(0, 0%, 60%, .8);*/
+  }
+}
+
+#gandhi:hover{
+	top: 52px;
+	right: 18px;
+	-moz-box-shadow: 3px 3px 2px hsla(0, 0%, 0%, .3);
+	-webkit-box-shadow: 3px 3px 2px hsla(0, 0%, 0%, .3);
+	box-shadow: 3px 3px 2px hsla(0, 0%, 0%, .3);
+	text-shadow: 1px 1px 1px hsla(0, 0%, 100%, .8);
+}
+
+
+
+/* Tree navigator */
+.tree-menu{
+	margin: 0 auto;
+}
+
+.tree-menu ul{
+	list-style: none;
+	padding-left: 25px;
+}
+
+.tree-menu h1{
+	font: 20px/27px 'angelina', Arial, sans-serif;
+	font-size: 40px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.tree-menu h2{
+	font-size: 15px;
+	text-shadow: 2px 2px 3px hsla(0, 0%, 100%, .8);
+}
+
+.tree-menu h2:hover{
+	text-shadow: 0 0 5px hsla(0, 0%, 30%, .7);
+}
+
+.tree-menu a{
+	color: black;
+	font-size: 15px;
+	text-decoration: none;	
+	padding-left: 5px;
+}
+
+.tree-menu a:before{
+	content: "\00BB  ";
+}
+
+.tree-menu h2:before{
+	content: "\21D2 ";
+}
+
+.tree-menu h2.expanded{
+	font-weight: bold;
+}
+
+.tree-menu h2.expanded:before{
+	content: "\21D3 ";
+}
+
+/* Links Externos */
+
+.cajaDerecha{
+	min-width: 200px;
+	border: 2px solid #662626;
+	padding-left: 10px;
+	padding-right: 5px;
+	
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+	
+	-moz-box-shadow: 5px 5px 8px hsla(0, 0%, 0%, .3);
+	-webkit-box-shadow: 5px 5px 8px hsla(0, 0%, 0%, .3);
+	box-shadow: 5px 5px 8px hsla(0, 0%, 0%, .3);
+	
+	-moz-transform: rotate(-2deg);
+	-webkit-transform: rotate(-2deg);
+	-o-transform: rotate(-2deg);
+	transform: rotate(-2deg);
+	
+	margin-bottom: 50px;
+}
+
+.cajaDerecha h1{
+	font: 20px/27px 'angelina', Arial, sans-serif;
+	font-size: 40px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.cajaDerecha a{
+	color: #823F00;
+	text-decoration: none;
+}
+
+.cajaDerecha a:before{
+	content: "\00BB  ";
+}
+

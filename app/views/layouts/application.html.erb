@@ -1,14 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>EnsaludpsiRails</title>
+  <title>En Salud Psi <%= " - #{@title}"  if @title %></title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="principal">
+    <div id="cabecera">
+      <%= image_tag "/assets/ensaludpsiLogo.png", :id => "logo" %>
+      <div id="nombre">En Salud Psi</div>
+      
+      <% if logged_in? %>
+      <nav id="userMenu">
+        <ul>
+          <li><img src="images/tux01.png" /></li>
+          <li>Username</li>
+          <li><a href="">Perfil</a></li>
+          <li><a href="">Salir</a></li>
+        </ul>
+      </nav>
+      <% end %>
+      
+      <div id="gandhi">
+        <div class="frase">"Sé el cambio que quieras ver en el mundo"</div>
+        <div class="firma">- Mohandas Gandhi</div>
+      </div>
+    </div>
+  </div>
+  <div id="centro">
+		<div id="leftSidebar" class="">
+					
+		</div>
+		<div id="contents" class="">
+			<div id="menu">
+				<ul>
+					<li class="menuItem"><%= link_to "Inicio", root_path %></li>
+					<li class="menuItem"><%= link_to "Maternidad y paternidad", matypat_path %></li>
+					<li class="menuItem"><%= link_to "Consultorio", consultorio_path %></li>
+					<li class="menuItem"><%= link_to "Contacto", contacto_path %></li>
+				</ul>
+			</div>
 
-<%= yield %>
+			<%= yield %>
+			
+      
+			
+							
+		</div>
+		<div id="rightSidebar" class="">
+			
+			
+		</div>
+	</div>
+
 
 </body>
 </html>
