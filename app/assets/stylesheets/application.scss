@@ -153,6 +153,14 @@ ul{
 	margin: 15px;
 }
 
+.contentsTitle{
+	color: #5D2B2B;
+	/*font: 20px/27px 'CarbonTypeRegular', Arial, sans-serif;*/
+	font-size: 30px;
+	margin: 35px;
+  text-align: center;
+}
+
 .contentBody{
 	color: #823F00;
 	padding: 0 10px 0 10px;
@@ -168,6 +176,13 @@ ul{
 
 .contents:hover{
 	text-shadow: 3px 3px 3px hsla(0, 0%, 0%, .2);
+}
+
+.Duracionmatypat{
+	color: #823F00;
+	padding: 0 10px 0 10px;
+	margin: 10px 30px;
+	
 }
 
 /* Header */
