@@ -148,14 +148,12 @@ ul{
 
 .contentTitle{
 	color: #5D2B2B;
-	/*font: 20px/27px 'CarbonTypeRegular', Arial, sans-serif;*/
 	font-size: 25px;
 	margin: 15px;
 }
 
 .contentsTitle{
 	color: #5D2B2B;
-	/*font: 20px/27px 'CarbonTypeRegular', Arial, sans-serif;*/
 	font-size: 30px;
 	margin: 35px;
   text-align: center;
@@ -195,10 +193,18 @@ ul{
 #nombre{
 	position: absolute;
 	left: 125px;
-	top: 120px;
+	top: 110px;
 	font: 20px/27px 'FFF_Tusj', Arial, sans-serif;
 	font-size: 48px;
 	text-shadow: 2px 2px 2px hsla(0, 0%, 60%, .8);
+	
+	p{
+		text-align: right;
+		font: 20px/27px 'angelina', Arial, sans-serif;
+		text-style: italic;
+		margin: 5px;
+		padding:0;
+	}
 }
 
 #logo{

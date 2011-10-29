@@ -27,5 +27,5 @@ gem 'will_paginate'
 
 gem "nifty-generators", :group => :development
 
-
+gem 'bcrypt-ruby'
 
