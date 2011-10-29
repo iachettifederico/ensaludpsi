@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  force_ssl
+  #force_ssl
   
   helper_method :logged_in?, :admin?, :editor?, :current_user
   
