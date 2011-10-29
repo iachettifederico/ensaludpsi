@@ -1,5 +1,6 @@
 EnsaludpsiRails::Application.routes.draw do  
   resources :users
+  resources :questions
   
   root                  :to => 'pages#home'
   

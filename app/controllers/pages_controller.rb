@@ -13,6 +13,7 @@ class PagesController < ApplicationController
 
   def contacto
     @title = 'Contacto'
+    @question = @question || Question.new
   end
 
 end

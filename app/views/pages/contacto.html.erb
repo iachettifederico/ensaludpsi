@@ -10,6 +10,34 @@
 <div class="contents">
   <h1 class="contentTitle">Realizar una consulta</h1>
   <div class="contentBody">
-    Formulario de contacto
+    <%= form_for @question do |f| %>
+			<% if @question.errors.any? %>
+				<div class="error_messages">
+					<h2>Error</h2>
+					<ul>
+						<% for message in @question.errors.full_messages %>
+							<li><%= message %></li>
+						<% end %>
+					</ul>
+				</div>
+			<% end %>
+			<div class="field">
+				<%= f.label "Nombre" %>
+				<%= f.text_field :name %>
+			</div>
+			<div class="field">
+				<%= f.label "e-mail" %>
+				<%= f.text_field :from %>
+			</div>
+			<div class="field">
+				<%= f.label "Asunto" %>
+				<%= f.text_field :subject %>
+			</div>
+			<div class="field">
+				<%= f.label "Consulta" %>
+				<%= f.text_area :question %>
+			</div>
+			<div class="actions"><%= f.submit %></div>
+		<% end %>
   </div>  
 </div>
