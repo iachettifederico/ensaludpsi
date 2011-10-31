@@ -9,6 +9,9 @@
 
 <div class="contents">
   <h1 class="contentTitle">Realizar una consulta</h1>
+  <% flash.each do |key, value| %>
+		<div class="flash <%= key %>"><%= value %></div>
+  <% end %>
   <div class="contentBody">
     <%= form_for @question do |f| %>
 			<% if @question.errors.any? %>
