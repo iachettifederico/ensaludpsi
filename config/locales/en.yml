@@ -3,3 +3,19 @@
 
 en:
   hello: "Hello world"
+
+  activerecord:
+    models:
+      user:
+        one: "user"
+        other: "users"
+        attributes:
+          name: "name"
+      question:
+        one: "question"
+        other: "questions"
+        attributes:
+          name: "name"
+          from: "email"
+          question: "question"
+          subject: "subject"
