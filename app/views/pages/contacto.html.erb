@@ -9,38 +9,31 @@
 
 <div class="contents">
   <h1 class="contentTitle">Realizar una consulta</h1>
-  <% flash.each do |key, value| %>
-		<div class="flash <%= key %>"><%= value %></div>
-  <% end %>
+  
+	<%= render "shared/flash_messages" %>
+  
   <div class="contentBody">
     <%= form_for @question do |f| %>
-			<% if @question.errors.any? %>
-				<div class="error_messages">
-					<h2>Error</h2>
-					<ul>
-						<% for message in @question.errors.full_messages %>
-							<li><%= message %></li>
-						<% end %>
-					</ul>
-				</div>
-			<% end %>
+			
+			<%= render "shared/error_messages", :target => @question %>
+			
 			<div class="field">
-				<%= f.label "Nombre" %>
+				<%= f.label t("activerecord.models.question.attributes.name") %>
 				<%= f.text_field :name %>
 			</div>
 			<div class="field">
-				<%= f.label "e-mail" %>
+				<%= f.label t("activerecord.models.question.attributes.from") %>
 				<%= f.text_field :from %>
 			</div>
 			<div class="field">
-				<%= f.label "Asunto" %>
+				<%= f.label t("activerecord.models.question.attributes.subject") %>
 				<%= f.text_field :subject %>
 			</div>
 			<div class="field">
-				<%= f.label "Consulta" %>
+				<%= f.label t("activerecord.models.question.attributes.question") %>
 				<%= f.text_area :question %>
 			</div>
-			<div class="actions"><%= f.submit %></div>
+			<div class="actions"><%= submit_tag "Realizar consulta" %></div>
 		<% end %>
   </div>  
 </div>

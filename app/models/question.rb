@@ -1,3 +1,8 @@
 class Question < ActiveRecord::Base
-	 validates_presence_of :from
+	validates :from, :presence => true
+	validates :subject, :presence => true
+	validates :question, :presence => true
+
+	
+
 end

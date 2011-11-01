@@ -16,11 +16,11 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=0
-FILE_NAME_0=65;Ruby;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/controllers/questions_controller.rb;0;2
+current_page=4
+FILE_NAME_0=310;Ruby;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/controllers/questions_controller.rb;0;2
 FILE_NAME_1=282;Ruby;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/mailers/question_mailer.rb;0;2
 FILE_NAME_2=112;Ruby;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/config/initializers/setup_mail.rb;0;2
 FILE_NAME_3=191;HTML;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/views/question_mailer/ask_question.html.erb;0;2
-FILE_NAME_4=0;Ruby;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/models/question.rb;0;2
-FILE_NAME_5=384;HTML;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/views/pages/contacto.html.erb;0;2
-FILE_NAME_6=266;Ruby;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/controllers/pages_controller.rb;0;2
+FILE_NAME_4=72;Ruby;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/models/question.rb;0;2
+FILE_NAME_5=561;HTML;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/views/pages/contacto.html.erb;0;2
+FILE_NAME_6=225;Ruby;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/controllers/pages_controller.rb;0;2
