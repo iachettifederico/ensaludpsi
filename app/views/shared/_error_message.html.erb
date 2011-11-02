@@ -1,0 +1,9 @@
+<% unless @question.errors[:from].empty? %>
+	<div class="error_messages">
+		<ul>
+			<% target.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
