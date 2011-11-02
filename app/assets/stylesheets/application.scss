@@ -324,7 +324,6 @@ ul{
 	right: 20px;
 	margin: 0 auto;
 	background-color: hsla( 34, 37%, 80%, .5);
-	/*background-color: hsla(280, 40%, 70%, .5);*/
 	width: 450px;
 	padding: 10px;
 	
@@ -456,28 +455,16 @@ ul{
 }
 
 .error_messages{
-	width:400px;
 	color: red;
-	background-color: #F1BFBF;
 	padding: 5px;
-	margin: 15px auto;
-	-moz-border-radius: 20px;
-	-webkit-border-radius: 20px;
-	border-radius: 20px;
-	
-	-moz-box-shadow: 5px 5px 8px hsla(0, 0%, 0%, .3);
-	-webkit-box-shadow: 5px 5px 8px hsla(0, 0%, 0%, .3);
-	box-shadow: 5px 5px 8px hsla(0, 0%, 0%, .3);
-
+	margin-left: 100px;
 	text-shadow: 1px 1px 1px hsla(0, 0%, 100%, .8);
-
 }
 
 .flash{
 	width:400px;
-	background-color: hsla( 34, 37%, 80%, .5);
-	padding: 5px;
-	margin: 15px auto;
+	margin: auto;
+	padding: 15px;
 	-moz-border-radius: 20px;
 	-webkit-border-radius: 20px;
 	border-radius: 20px;
@@ -487,4 +474,31 @@ ul{
 	box-shadow: 5px 5px 8px hsla(0, 0%, 0%, .3);
 
 	text-shadow: 1px 1px 1px hsla(0, 0%, 100%, .8);
+	
+	background-color: hsla( 34, 37%, 80%, .5);
+	
+	text-align: center;
 }
+
+.field{
+	position: relative;
+	left: 100px;
+}
+
+.field label{
+	float:left;
+	text-align: right;
+	width: 80px;
+	margin-right: 5px;
+}
+
+form input{
+	margin-bottom: 10px;
+	margin-left: 15px;
+}
+
+form textarea{
+	margin-bottom: 10px;
+	margin-left: 15px;
+}
+
