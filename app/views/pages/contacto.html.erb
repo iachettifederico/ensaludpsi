@@ -12,12 +12,14 @@
   
 	<%= render "shared/flash_messages" %>
   
+	<% unless @question.errors.empty? %>
   <div class="error_messages">
 		<%= render "shared/error_message", :target => @question.errors[:name], :field_name => t("activerecord.models.question.attributes.name") %>
 		<%= render "shared/error_message", :target => @question.errors[:from], :field_name => t("activerecord.models.question.attributes.from") %>
 		<%= render "shared/error_message", :target => @question.errors[:subject], :field_name => t("activerecord.models.question.attributes.subject") %>
 		<%= render "shared/error_message", :target => @question.errors[:question], :field_name => t("activerecord.models.question.attributes.question") %>
   </div>
+	<% end %>
   
   <div class="contentBody">
     <%= form_for @question do |f| %>			
