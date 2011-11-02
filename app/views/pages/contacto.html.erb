@@ -27,10 +27,12 @@
 			<div class="field">
 				<%= f.label t("activerecord.models.question.attributes.subject") %>
 				<%= f.text_field :subject %>
+				<%= render "shared/error_message", :target => @question.errors[:subject] %>
 			</div>
 			<div class="field">
 				<%= f.label t("activerecord.models.question.attributes.question") %>
 				<%= f.text_area :question, :rows => "8" %>
+				<%= render "shared/error_message", :target => @question.errors[:question] %>
 			</div>
 			<div class="actions"><%= submit_tag "Realizar consulta" %></div>
 		<% end %>
