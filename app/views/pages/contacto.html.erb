@@ -12,27 +12,30 @@
   
 	<%= render "shared/flash_messages" %>
   
+  <div class="error_messages">
+		<%= render "shared/error_message", :target => @question.errors[:name], :field_name => t("activerecord.models.question.attributes.name") %>
+		<%= render "shared/error_message", :target => @question.errors[:from], :field_name => t("activerecord.models.question.attributes.from") %>
+		<%= render "shared/error_message", :target => @question.errors[:subject], :field_name => t("activerecord.models.question.attributes.subject") %>
+		<%= render "shared/error_message", :target => @question.errors[:question], :field_name => t("activerecord.models.question.attributes.question") %>
+  </div>
+  
   <div class="contentBody">
     <%= form_for @question do |f| %>			
 			<div class="field">
 				<%= f.label t("activerecord.models.question.attributes.name") %>
 				<%= f.text_field :name %>
-				<%= render "shared/error_message", :target => @question.errors[:name] %>
 			</div>
 			<div class="field">
 				<%= f.label t("activerecord.models.question.attributes.from") %>
 				<%= f.text_field :from %>
-				<%= render "shared/error_message", :target => @question.errors[:from] %>
 			</div>
 			<div class="field">
 				<%= f.label t("activerecord.models.question.attributes.subject") %>
 				<%= f.text_field :subject %>
-				<%= render "shared/error_message", :target => @question.errors[:subject] %>
 			</div>
 			<div class="field">
 				<%= f.label t("activerecord.models.question.attributes.question") %>
 				<%= f.text_area :question, :rows => "8" %>
-				<%= render "shared/error_message", :target => @question.errors[:question] %>
 			</div>
 			<div class="actions"><%= submit_tag "Realizar consulta" %></div>
 		<% end %>

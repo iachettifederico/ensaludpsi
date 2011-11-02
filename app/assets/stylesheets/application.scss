@@ -455,10 +455,31 @@ ul{
 }
 
 .error_messages{
-	color: red;
+	width: 500px;
+	margin: auto;
 	padding: 5px;
 	margin-left: 100px;
+	margin-bottom: 25px;
+	
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	
+	background-color: hsla(0, 20%, 100%, .4);
+	
+	border:3px solid #B91D1D;
+}
+
+.error_message{
+	color: #B91D1D;
 	text-shadow: 1px 1px 1px hsla(0, 0%, 100%, .8);
+	padding: 2px;
+	margin: 3px;
+	
+	/*border:1px dotted #B91D1D;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;*/
 }
 
 .flash{

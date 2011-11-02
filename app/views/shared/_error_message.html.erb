@@ -1,8 +1,10 @@
-<% unless @question.errors[:from].empty? %>
-	<div class="error_messages">
+<% unless target.empty? %>
+	<div class="error_message">
 		<ul>
 			<% target.each do |message| %>
-				<li><%= message %></li>
+				<li>
+					<%= "El campo #{field_name} #{message}" %>
+				</li>
 			<% end %>
 		</ul>
 	</div>
