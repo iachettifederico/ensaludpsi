@@ -16,12 +16,15 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=3
-FILE_NAME_0=309;Ruby;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/controllers/questions_controller.rb;0;2
-FILE_NAME_1=282;Ruby;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/mailers/question_mailer.rb;0;2
-FILE_NAME_2=249;Ruby;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/controllers/pages_controller.rb;0;2
-FILE_NAME_3=1304;HTML;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/views/pages/contacto.html.erb;0;2
-FILE_NAME_4=52;Ruby;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/models/question.rb;0;2
-FILE_NAME_5=4779;YAML;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/config/locales/es.yml;0;2
-FILE_NAME_6=516;None;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/Gemfile;0;2
-FILE_NAME_7=8913;CSS;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/assets/stylesheets/application.scss;0;2
+current_page=5
+FILE_NAME_0=317;HTML;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/views/pages/contacto.html.erb;0;2
+FILE_NAME_1=130;HTML;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/views/pages/home.html.erb;0;2
+FILE_NAME_2=881;HTML;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/views/layouts/application.html.erb;0;2
+FILE_NAME_3=4959;CSS;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/assets/stylesheets/application.scss;0;2
+FILE_NAME_4=2380;Conf;0;16;1;1;0;/home/fedex/.config/geany/snippets.conf;0;2
+FILE_NAME_5=151;Ruby;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/config/initializers/setup_mail.rb;0;2
+
+[build-menu]
+NF_03_LB=rails server
+NF_03_CM=rails server
+NF_03_WD=~/store/rubyOnRails/projects/ensaludpsi_rails/
