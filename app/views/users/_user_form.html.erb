@@ -1,0 +1,41 @@
+<div class="contentBody">
+	<%= form_for @user do |f| %>
+		<% if @user.errors.any? %>
+			<div class="error_messages">
+				<h2>Errores al crear usuario</h2>
+				<ul>
+					<% for message in @user.errors.full_messages %>
+						<li><%= message %></li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
+		<div class="field">
+			<%= f.label "Nombre" %>
+			<%= f.text_field :name %>
+		</div>
+		<div class="field">
+			<%= f.label "Email" %>
+			<%= f.text_field :email %>
+		</div>
+		<div class="field">
+			<%= f.label "Password" %>
+			<%= f.password_field :password, :value => ""  %>
+		</div>
+		<div class="field">
+			<%= f.label "Confirmar password" %>
+			<%= f.password_field :password_confirmation, :value => "" %>
+		</div>
+		<% if admin? %>
+			<div class="field">
+				<%= f.label "Admin?" %>
+				<%= f.check_box :admin %>
+			</div>
+			<div class="field">
+				<%= f.label "Editor?" %>
+				<%= f.check_box :editor %>
+			</div>
+		<% end %>
+		<div class="actions"><%= f.submit %></div>
+	<% end %>
+</div>

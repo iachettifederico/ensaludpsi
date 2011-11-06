@@ -52,6 +52,7 @@ body{
 	background-image: url(/assets/dandelion.png), url(/assets/background.jpg);
 	background-repeat: no-repeat, repeat;
 	background-position: right bottom; 
+	background-size: 20% auto;
 }
 
 div{
@@ -60,6 +61,11 @@ div{
 
 ul{
 	list-style: none;
+}
+
+a{
+	text-decoration: none;	
+	color: #4F1B1B;
 }
 
 /* Layout */
@@ -150,7 +156,8 @@ ul{
 .contentTitle{
 	color: #5D2B2B;
 	font-size: 25px;
-	margin: 15px;
+	margin: 30px 15px;
+	line-height: 120%;
 }
 
 .contentsTitle{
@@ -164,6 +171,11 @@ ul{
 	color: #823F00;
 	padding: 0 10px 0 10px;
 	margin: 10px 30px;
+	line-height: 150%;
+	
+	li{
+		margin: .8em auto;
+	}
 	
 }
 
@@ -291,7 +303,7 @@ ul{
 	top: 10px;
 	right: 18px;
 	height: 30px;
-	text-align: center;
+	
 	
 	background-color: hsla( 34, 37%, 95%, .5);
 	
@@ -302,23 +314,22 @@ ul{
 	-moz-box-shadow: 5px 5px 8px hsla(0, 0%, 0%, .3);
 	-webkit-box-shadow: 5px 5px 8px hsla(0, 0%, 0%, .3);
 	box-shadow: 5px 5px 8px hsla(0, 0%, 0%, .3);
-	display:block;
-
-  li{
-	  float: left;
-	  margin: 5px 3px auto 3px;
-	  padding: 0 5px 0 5px;
-  }
 
   ul{
-	  margin-top: 0;
-	  margin-right: 10;
+		position: relative;
+		top: -8px;
+	  padding: 0 25px;
+	  
+	  li{
+			display: inline;
+			margin:  0;
+			
+			padding: 0 10px;
+			
+	  }
   }
-
-  img{
-	  height: 28px;
-	  margin-top: -5px;
-  }
+  
+  padding: 0;
 }
 
 /* Frase Ghandi */
@@ -514,8 +525,9 @@ ul{
 .field label{
 	float:left;
 	text-align: right;
-	width: 80px;
+	width: 90px;
 	margin-right: 5px;
+	word-wrap: break-word;
 }
 
 form input{
@@ -523,8 +535,67 @@ form input{
 	margin-left: 15px;
 }
 
+form .actions{
+	padding-top: 30px;
+	padding-left: 200px;
+}
+
 form textarea{
 	margin-bottom: 10px;
 	margin-left: 15px;
 }
 
+.indexTable{
+	margin-left: 50px;
+	
+	th{
+		background-color: hsla( 0, 0%, 60%, .5);
+		padding: 3px 10px;
+	}
+	
+	td{
+		padding: 3px 10px;
+	}
+}
+
+.indexTable tr:nth-child(even){
+	background-color: hsla( 0, 0%, 80%, .5);
+}
+
+#cvfoto{
+	background-color: white;
+	padding: 10px;
+	padding-bottom: 40px;
+	border: 1px solid black;
+	
+	overflow: auto;
+	
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	
+	-moz-box-shadow: 5px 5px 8px hsla(0, 0%, 0%, .3);
+	-webkit-box-shadow: 5px 5px 8px hsla(0, 0%, 0%, .3);
+	box-shadow: 5px 5px 8px hsla(0, 0%, 0%, .3);
+	
+	-moz-transform: rotate(-2deg);
+	-webkit-transform: rotate(-2deg);
+	-o-transform: rotate(-2deg);
+	transform: rotate(-2deg);
+	
+	img{
+		height: 200px;
+		border: 1px solid black;
+		
+		-moz-border-radius: 3px;
+		-webkit-border-radius: 3px;
+		border-radius: 3px;
+	}
+}
+
+#cvfoto:hover{
+	-moz-transform: rotate(-5deg);
+	-webkit-transform: rotate(-5deg);
+	-o-transform: rotate(-5deg);
+	transform: rotate(-5deg);
+}

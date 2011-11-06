@@ -1,13 +1,26 @@
-<h1>Log in</h1>
-
-<%= form_tag sessions_path do %>
-  <div class="field">
-    <%= label_tag :email %>
-    <%= text_field_tag :email, params[:email] %>
-  </div>
-  <div class="field">
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-  </div>
-  <div class="actions"><%= submit_tag "Log in" %></div>
-<% end %>
+<div class="contents">
+  <h1 class="contentTitle">Ingresar</h1>
+	<% if flash.any? %>
+		<div class="error_messages">
+			<h2>No se ha podido iniciar sesión</h2>
+			<ul>
+				<% flash.each do |name, msg| %>
+					<li><%= content_tag :div, msg, :id => "flash_#{name}" %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	<div class="contentBody">
+		<%= form_tag sessions_path do %>
+			<div class="field">
+				<%= label_tag :email %>
+				<%= text_field_tag :email, params[:email] %>
+			</div>
+			<div class="field">
+				<%= label_tag :password %>
+				<%= password_field_tag :password %>
+			</div>
+			<div class="actions"><%= submit_tag "Ingresar" %></div>
+		<% end %>
+	</div>
+</div>
