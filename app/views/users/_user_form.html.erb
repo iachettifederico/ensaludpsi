@@ -1,15 +1,15 @@
 <div class="contentBody">
 	<%= form_for @user do |f| %>
-		<% if @user.errors.any? %>
-			<div class="error_messages">
-				<h2>Errores al crear usuario</h2>
-				<ul>
-					<% for message in @user.errors.full_messages %>
-						<li><%= message %></li>
-					<% end %>
-				</ul>
-			</div>
+		<% unless @user.errors.empty? %>
+		<div class="error_messages">
+			<%= render "shared/error_message", :target => @user.errors[:name], :field_name => t("activerecord.models.user.attributes.name") %>
+			<%= render "shared/error_message", :target => @user.errors[:email], :field_name => t("activerecord.models.user.attributes.email") %>
+			<%= render "shared/error_message", :target => @user.errors[:password], :field_name => t("activerecord.models.user.attributes.password") %>
+			<%= render "shared/error_message", :target => @user.errors[:admin], :field_name => t("activerecord.models.user.attributes.admin") %>
+			<%= render "shared/error_message", :target => @user.errors[:editor], :field_name => t("activerecord.models.user.attributes.editor") %>
+		</div>
 		<% end %>
+		
 		<div class="field">
 			<%= f.label "Nombre" %>
 			<%= f.text_field :name %>

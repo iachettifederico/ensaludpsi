@@ -1,15 +1,24 @@
-<h1 class="contentTitle"><%= @user.name %></h1>
-<div class="contentBody">
-	<div>
-		Nombre: <%= @user.name %>
-	</div>
-	<div>
-		Email: <%= @user.email %>
-	</div>
-	<div>
-		Admin ?: <%= @user.admin? %>
-	</div>
-	<div>
-		Editor ?: <%= @user.editor? %>
+<div class="contents">
+	<h1 class="contentTitle"><%= @user.name %></h1>
+	<div class="contentBody">
+		<table class="indexTable">
+			<tr/>
+			<tr>
+				<td>Nombre de usuario:</td>
+				<td><%=	@user.name %></td>
+			</tr>
+			<tr>
+				<td>Email:</td>
+				<td><%= @user.email %></td>
+			</tr>
+			<% if @user.admin? %>
+				<tr><td colspan="2" align="center">Es administrador</td>
+			<% end %>
+			<% if @user.editor? %>
+				<tr><td colspan="2" align="center">Es editor</td></tr>
+			<% end %>
+		</table>
+		
+		
 	</div>
 </div>

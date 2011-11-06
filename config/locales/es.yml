@@ -216,6 +216,11 @@
         other: "usuarios"
         attributes:
           name: "nombre"
+          email: "email"
+          password: "password"
+          password_confirmation: "confirmar password"
+          admin: "administrador"
+          editor: "editor"
       question:
         one: "consulta"
         other: "consultas"
