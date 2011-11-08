@@ -415,11 +415,17 @@ a{
 }
 
 .tree-menu a:before{
+	content: "·  ";
+/*
 	content: "\00BB  ";
+*/
 }
 
 .tree-menu h2:before{
+	content: "+  ";
+/*
 	content: "\21D2 ";
+*/
 }
 
 .tree-menu h2.expanded{
@@ -427,7 +433,10 @@ a{
 }
 
 .tree-menu h2.expanded:before{
+	content: "-  ";
+/*
 	content: "\21D3 ";
+*/
 }
 
 /* Links Externos */

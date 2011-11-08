@@ -10,7 +10,7 @@
   <div id="principal">
 		<%= render "layouts/header" %>
 		<div id="centro">
-			<%= render "layouts/left" %>
+			<%= yield :left_bar %>
 			<div id="contents" class="">
 				<%= render "layouts/menu" %>
 				<%= yield %>

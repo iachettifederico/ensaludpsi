@@ -3,7 +3,8 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     @articles = Article.all
-
+		@categories = Category.all
+		
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @articles }
@@ -14,7 +15,8 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
     @article = Article.find(params[:id])
-
+		@categories = Category.all
+		
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @article }

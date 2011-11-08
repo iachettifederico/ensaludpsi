@@ -1,0 +1,21 @@
+<% content_for :left_bar do%>
+	<nav id="nav" class="tree-menu">
+		<h1>Categorías</h1>
+		<ul>
+			<% @categories.each do |cat| %>
+				<% if cat.articles.any? %>
+					<li><h2><%= cat.name %></h2>
+					<% if cat.articles.any? %>
+						<ul>
+						<% cat.articles.each do |art| %>
+							<li><%= link_to art.title.capitalize, art %></li>
+						<% end %>
+					</ul>
+					<% end %>
+				</li>
+				<% end %>
+			<% end %>
+		</ul>
+	</nav>
+
+<% end %>
