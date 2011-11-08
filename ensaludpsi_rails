@@ -16,13 +16,15 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=5
-FILE_NAME_0=9891;CSS;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/assets/stylesheets/application.scss;0;2
-FILE_NAME_1=222;HTML;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/views/pages/home.html.erb;0;2
-FILE_NAME_2=3306;Conf;0;16;1;1;0;/home/fedex/.config/geany/snippets.conf;0;2
-FILE_NAME_3=449;HTML;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/views/users/show.html.erb;0;2
-FILE_NAME_4=486;Ruby;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/db/seeds.rb;0;2
-FILE_NAME_5=814;HTML;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/views/pages/mat_y_pat.html.erb;0;2
+current_page=1
+FILE_NAME_0=401;HTML;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/views/layouts/application.html.erb;0;2
+FILE_NAME_1=0;HTML;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/views/articles/index.html.erb;0;2
+FILE_NAME_2=26;HTML;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/views/articles/show.html.erb;0;2
+FILE_NAME_3=7827;CSS;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/assets/stylesheets/application.scss;0;2
+FILE_NAME_4=396;HTML;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/views/articles/_form.html.erb;0;2
+FILE_NAME_5=415;Ruby;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/controllers/articles_controller.rb;0;2
+FILE_NAME_6=40;HTML;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/views/layouts/_left.html.erb;0;2
+FILE_NAME_7=438;HTML;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/views/articles/_left_bar.html.erb;0;2
 
 [build-menu]
 NF_03_LB=rails server

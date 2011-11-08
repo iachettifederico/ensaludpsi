@@ -633,4 +633,29 @@ div.authors{
 }
 
 
+div.acciones{	
+	background-color: transparent;
+	font-size: 15px;
+	color: hsla(200, 15%, 30%, 1);
+	text-align: center;
+	
+	max-width: 80%;
+	
+	margin: 0 auto;
+
+	ul{
+		li{
+			display: inline;
+			padding: 3px 5px;
+			margin: 2px;
+			background-color: hsla(200, 15%, 80%, .7);
+			border: 2px solid hsla(200, 15%, 60%, .9);
+			
+			-moz-border-radius: 5px;
+			-webkit-border-radius: 5px;
+			border-radius: 5px;
+		}
+	}
+}
+
 

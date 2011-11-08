@@ -26,8 +26,9 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   # GET /articles/new.json
   def new
+		deny_access_unless(admin? || editor?)
     @article = Article.new
-
+		@article.published = false
     respond_to do |format|
       format.html # new.html.erb
       format.json { render :json => @article }
@@ -37,13 +38,14 @@ class ArticlesController < ApplicationController
   # GET /articles/1/edit
   def edit
     @article = Article.find(params[:id])
+    deny_access_unless(admin? || (editor? && @article.users.include?(current_user)))
   end
 
   # POST /articles
   # POST /articles.json
   def create
     @article = Article.new(params[:article])
-		
+		deny_access_unless(admin? || editor?))
 		opts = {}
 		opts = { :as => :editor } if editor?
 		opts = { :as => :admin } if admin?
@@ -63,7 +65,8 @@ class ArticlesController < ApplicationController
   # PUT /articles/1.json
   def update
     @article = Article.find(params[:id])
-
+		deny_access_unless(admin? || (editor? && @article.users.include?(current_user)))
+		
 		opts = {}
 		opts = { :as => :editor } if editor?
 		opts = { :as => :admin } if admin?
@@ -84,10 +87,17 @@ class ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
+    deny_access_unless(admin?)
 
     respond_to do |format|
       format.html { redirect_to articles_url }
       format.json { head :ok }
     end
   end
+  
+  private
+  
+		def deny_access_unless(condition)
+			deny_access unless condition
+		end
 end

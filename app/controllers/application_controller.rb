@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   #force_ssl
   
-  helper_method :logged_in?, :admin?, :editor?, :current_user, :can_edit?, :current_user?, :deny_access
+  helper_method :logged_in?, :admin?, :editor?, :current_user, :can_edit?, :current_user?, :deny_access, :published_articles
   
   private
   
@@ -31,6 +31,11 @@ class ApplicationController < ActionController::Base
 		end
 
 		def deny_access
-			redirect_to signin_path, :notice => "Por favor inicie sesión para poder proceder."
+			redirect_to root_path
 		end
+		
+		def published_articles(is_published)
+			Article.find_all_by_published(is_published).to_a
+		end
+	
 end

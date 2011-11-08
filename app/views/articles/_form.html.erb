@@ -7,6 +7,9 @@
 			<%= f.input :contents, :as => :text, :label => "Contenidos", :input_html => { :class => "markItUp" } %>
 			<%= f.input :users, :label => "Autores", :collection => User.find_all_by_editor(true) %>
 			<%= f.input :categories, :label => "Categorías" %>
+			<% if admin? %>
+				<%= f.input :published, :label => "Publicado?" %>
+			<% end %>
 		<% end %>
 		<%= f.buttons %>
 	<% end %>

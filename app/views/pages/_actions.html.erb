@@ -1,0 +1,18 @@
+<% if editor? || admin? %>
+	<div class="contents">
+		<h1 class="contentTitle">Acciones</h1>
+		<div class="acciones">
+			<ul>
+				<% if editor? %>
+					<li><%= link_to "Artículo nuevo", new_article_path %></li>
+				<% end %>
+				<% if editor? || admin? %>
+					<li><%= link_to "Categoría nueva", new_category_path %></li>
+				<% end %>
+				<% if admin? %>
+					<li><%= link_to "Administrar usuarios", users_path %></li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+<% end %>

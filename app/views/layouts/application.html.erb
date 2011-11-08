@@ -10,9 +10,25 @@
   <div id="principal">
 		<%= render "layouts/header" %>
 		<div id="centro">
-			<%= yield :left_bar %>
+			<%= render "layouts/left" %>
 			<div id="contents" class="">
 				<%= render "layouts/menu" %>
+				
+				<% if admin? && published_articles(false).any? %>
+					<div class="contents">
+						<div class="error_messages">
+							<h1 class="contentTitle">Hay artículos pendientes de publicar</h1>
+							<div class="contentBody">
+								<ul>
+									<% published_articles(false).each do |article| %>
+										<li><%= link_to article.title, edit_article_path(article) %></li>
+									<% end %>
+								</ul>
+							</div>
+						</div>
+					</div>
+				<% end %>
+				
 				<%= yield %>
 			</div>
 			<%= render "layouts/right" %>
