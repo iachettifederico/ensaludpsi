@@ -603,7 +603,7 @@ div.categories{
 }
 
 div.authors{
-	padding: 15px 15px 5px 15px;
+	padding: 5px 15px 5px 15px;
 	width: 100px;
 	margin: 10px 25px 10px auto;
 	
@@ -614,4 +614,14 @@ div.authors{
 	-moz-border-radius: 15px;
 	-webkit-border-radius: 15px;
 	border-radius: 15px;
+	
+	ul{
+		margin-bottom: 0;
+		li{
+			margin-bottom: 0;
+		}
+	}
 }
+
+
+
