@@ -42,6 +42,8 @@ GEM
     erubis (2.7.0)
     execjs (1.2.9)
       multi_json (~> 1.0)
+    formtastic (2.0.2)
+      rails (~> 3.0)
     hike (1.2.1)
     i18n (0.6.0)
     jquery-rails (1.0.16)
@@ -84,6 +86,7 @@ GEM
     rake (0.9.2.2)
     rdoc (3.11)
       json (~> 1.4)
+    redcarpet (1.17.2)
     sass (3.1.10)
     sass-rails (3.1.4)
       actionpack (~> 3.1.0)
@@ -116,10 +119,12 @@ DEPENDENCIES
   bcrypt-ruby
   coffee-rails (~> 3.1.1)
   execjs
+  formtastic
   jquery-rails
   json
   nifty-generators
   rails (= 3.1.1)
+  redcarpet
   sass-rails (~> 3.1.4)
   sqlite3
   therubyracer

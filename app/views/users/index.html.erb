@@ -29,6 +29,9 @@
 			<% end %>
 		<% end %>
     <td><%= link_to 'Mostrar', user %></td>
+		<% if admin? %>
+			<td><%= link_to 'Eliminar', user, :confirm => 'Está seguro?', :method => :delete %></td>
+		<% end %>
     
   </tr>
 <% end %>

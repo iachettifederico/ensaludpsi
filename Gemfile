@@ -29,4 +29,6 @@ gem "nifty-generators", :group => :development
 
 gem 'bcrypt-ruby'
 
+gem 'formtastic'
 
+gem 'redcarpet'

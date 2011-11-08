@@ -41,9 +41,13 @@ class ArticlesController < ApplicationController
   # POST /articles.json
   def create
     @article = Article.new(params[:article])
-
+		
+		opts = {}
+		opts = { :as => :editor } if editor?
+		opts = { :as => :admin } if admin?
+		
     respond_to do |format|
-      if @article.save
+      if @article.save(opts)
         format.html { redirect_to @article, :notice => 'Article was successfully created.' }
         format.json { render :json => @article, :status => :created, :location => @article }
       else
@@ -58,8 +62,12 @@ class ArticlesController < ApplicationController
   def update
     @article = Article.find(params[:id])
 
+		opts = {}
+		opts = { :as => :editor } if editor?
+		opts = { :as => :admin } if admin?
+
     respond_to do |format|
-      if @article.update_attributes(params[:article])
+      if @article.update_attributes(params[:article], opts)
         format.html { redirect_to @article, :notice => 'Article was successfully updated.' }
         format.json { head :ok }
       else

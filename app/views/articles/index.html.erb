@@ -1,21 +1,40 @@
 <h1>Listing articles</h1>
 
-<table>
+<table class="indexTable">
   <tr>
-    <th>Title</th>
-    <th>Contents</th>
+    <th>Título</th>
+    <th>Autores</th>
+    <th>Categorías</th>
     <th></th>
-    <th></th>
-    <th></th>
+    <% if editor? || admin? %>
+			<th></th>
+		<% end %>
+		<% if admin? %>
+			<th></th>
+		<% end %>
+    
   </tr>
 
 <% @articles.each do |article| %>
   <tr>
     <td><%= article.title %></td>
-    <td><%= article.contents %></td>
-    <td><%= link_to 'Show', article %></td>
-    <td><%= link_to 'Edit', edit_article_path(article) %></td>
-    <td><%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td>
+			<% article.users.each do |usr| %>
+				<%= usr.name %><br/>
+			<% end %>
+    </td>
+    <td>
+			<% article.categories.each do |category| %>
+				<%= category.name %><br/>
+			<% end %>
+    </td>
+    <td><%= link_to 'Mostrar', article %></td>
+		<% if editor? || admin? %>
+			<td><%= link_to 'Editar', edit_article_path(article) %></td>
+		<% end %>
+		<% if admin? %>
+			<td><%= link_to 'Eliminar', article, :confirm => 'Are you sure?', :method => :delete %></td>
+		<% end %>
   </tr>
 <% end %>
 </table>

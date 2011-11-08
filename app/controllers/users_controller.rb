@@ -52,6 +52,17 @@ class UsersController < ApplicationController
 		end
   end
   
+  def destroy
+		authenticate_admin
+    @user = User.find(params[:id])
+    @user.destroy
+
+    respond_to do |format|
+      format.html { redirect_to users_url }
+      format.json { head :ok }
+    end
+  end
+  
   def toggle_admin
     @user = User.find(params[:id])
 		if current_user.admin?

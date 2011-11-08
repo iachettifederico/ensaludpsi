@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+	has_many :authorships
+	has_many :articles, :through => :authorships
+	
 	attr_accessible :name, :email, :password, :password_confirmation
 	attr_accessible :name, :email, :password, :password_confirmation, :admin, :editor, :as => :admin
 	

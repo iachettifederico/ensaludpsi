@@ -1,15 +1,33 @@
-<p id="notice"><%= notice %></p>
+<div class="contents">
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @article.title %>
-</p>
+	<h1 class="contentTitle"><%= @article.title %></h1>
+	<div class="categories">
+		Categorías:
+		<ul>
+			<% @article.categories.each do |cat| %>
+				<li><%= cat.name %></li>
+			<% end %>
+		</ul>
+	</div>
+	
+	
+	<div class="contentBody">
+		<%=markdown @article.contents %>
+	</div>
 
-<p>
-  <b>Contents:</b>
-  <%= @article.contents %>
-</p>
+	<div class="authors">
+		Autores:
+		<ul>
+			<% @article.users.each do |u| %>
+				<li><%= link_to u.name, u %></li>
+			<% end %>
+		</ul>
+	</div>
 
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+	<% if editor? && @article.users.include?(current_user) || admin?  %>
+		<%= link_to 'Editar', edit_article_path(@article) %> |
+	<% end %>
+	
+	<%= link_to 'Volver a Arículos', articles_path %>
+</div>
