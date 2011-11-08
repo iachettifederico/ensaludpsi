@@ -21,7 +21,7 @@
 							<div class="contentBody">
 								<ul>
 									<% published_articles(false).each do |article| %>
-										<li><%= link_to article.title, edit_article_path(article) %></li>
+										<li><strong><%= link_to article.title, edit_article_path(article) %></strong> (<%= link_to 'Eliminar', article, :confirm => 'Está seguro?', :method => :delete %>)</li>
 									<% end %>
 								</ul>
 							</div>

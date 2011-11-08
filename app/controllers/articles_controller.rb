@@ -45,13 +45,18 @@ class ArticlesController < ApplicationController
   # POST /articles.json
   def create
     @article = Article.new(params[:article])
-		deny_access_unless(admin? || editor?))
+		deny_access_unless(admin? || editor?)
 		opts = {}
-		opts = { :as => :editor } if editor?
-		opts = { :as => :admin } if admin?
+		opts[:as]=[]
+		
+		opts[:as] += [:editor] if editor?
+		opts[:as] += [:admin] if admin?
+		opts[:as] += [:current_user] if @article.users.include?(current_user)
+		
 		
     respond_to do |format|
       if @article.save(opts)
+				@article.update_attributes(params[:article], opts)
         format.html { redirect_to @article, :notice => 'Article was successfully created.' }
         format.json { render :json => @article, :status => :created, :location => @article }
       else

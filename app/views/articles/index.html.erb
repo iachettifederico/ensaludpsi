@@ -1,49 +1,26 @@
 <%= render "left_bar" %>
-
-
-<!--
-<h1>Listing articles</h1>
-
-<table class="indexTable">
-  <tr>
-    <th>Título</th>
-    <th>Autores</th>
-    <th>Categorías</th>
-    <th></th>
-    <% if editor? || admin? %>
-			<th></th>
-		<% end %>
-		<% if admin? %>
-			<th></th>
-		<% end %>
-    
-  </tr>
-
-<% @articles.each do |article| %>
-  <tr>
-    <td><%= article.title %></td>
-    <td>
-			<% article.users.each do |usr| %>
-				<%= usr.name %><br/>
+<div class="contents">
+	<h2 class="contentTitle">Últimos artículos publicados</h2>
+	
+	<div class="contentBody">
+		<ul>
+			<% last_articles(10).each do |article| %>
+				<li>
+					<span style="font-weight: bold;"><%= link_to article.title.capitalize, article %></span>
+					<span style="color: gray; font-size: 12px;">(Modificado hace <%= time_ago_in_words(article.updated_at) %>)</span>
+					<% if can_edit?(article) %>
+						<span><%= link_to "Editar", edit_article_path(article) %></span>
+					<% end %>
+					<% if admin? %>
+						<span><%= link_to 'Eliminar', article, :confirm => 'Está seguro?', :method => :delete %></span>
+					<% end %>
+				</li>
 			<% end %>
-    </td>
-    <td>
-			<% article.categories.each do |category| %>
-				<%= category.name %><br/>
-			<% end %>
-    </td>
-    <td><%= link_to 'Mostrar', article %></td>
+		</ul>
 		<% if editor? || admin? %>
-			<td><%= link_to 'Editar', edit_article_path(article) %></td>
+			<%= link_to 'Crear artículo', new_article_path, :class => :accion %>
 		<% end %>
-		<% if admin? %>
-			<td><%= link_to 'Eliminar', article, :confirm => 'Are you sure?', :method => :delete %></td>
-		<% end %>
-  </tr>
-<% end %>
-</table>
+	</div>
+</div>
 
-<br />
 
-<%= link_to 'New Article', new_article_path %>
--->

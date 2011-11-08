@@ -2,6 +2,7 @@
 
 <div class="contentBody">
 	<%= semantic_form_for(@article) do |f| %>
+		<%= f.buttons %>
 		<%= f.inputs do %>
 			<%= f.input :title, :label => "Título" %>
 			<%= f.input :contents, :as => :text, :label => "Contenidos", :input_html => { :class => "markItUp" } %>
