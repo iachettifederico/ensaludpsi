@@ -12,7 +12,7 @@
 						<span><%= link_to "Editar", edit_article_path(article) %></span>
 					<% end %>
 					<% if admin? %>
-						<span><%= link_to 'Eliminar', article, :confirm => 'Está seguro?', :method => :delete %></span>
+						| <span><%= link_to 'Eliminar', article, :confirm => 'Está seguro?', :method => :delete %></span>
 					<% end %>
 				</li>
 			<% end %>

@@ -46,13 +46,13 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(params[:article])
 		deny_access_unless(admin? || editor?)
+		
 		opts = {}
 		opts[:as]=[]
 		
-		opts[:as] += [:editor] if editor?
-		opts[:as] += [:admin] if admin?
-		opts[:as] += [:current_user] if @article.users.include?(current_user)
-		
+		opts = {}
+		opts = { :as => :editor } if editor?
+		opts = { :as => :admin } if admin?
 		
     respond_to do |format|
       if @article.save(opts)
@@ -70,10 +70,10 @@ class ArticlesController < ApplicationController
   # PUT /articles/1.json
   def update
     @article = Article.find(params[:id])
-		deny_access_unless(admin? || (editor? && @article.users.include?(current_user)))
+		deny_access_unless(can_edit?(@article))
 		
 		opts = {}
-		opts = { :as => :editor } if editor?
+		opts = { :as => :editor } if can_edit?(@article)
 		opts = { :as => :admin } if admin?
 
     respond_to do |format|
