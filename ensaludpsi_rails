@@ -16,20 +16,11 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=12
-FILE_NAME_0=561;HTML;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/views/articles/index.html.erb;0;2
-FILE_NAME_1=677;Conf;0;16;1;1;0;/home/fedex/.config/geany/snippets.conf;0;2
-FILE_NAME_2=617;Ruby;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/controllers/application_controller.rb;0;2
-FILE_NAME_3=2638;CSS;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/assets/stylesheets/application.scss;0;2
-FILE_NAME_4=152;HTML;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/views/articles/_form.html.erb;0;2
-FILE_NAME_5=1247;Ruby;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/controllers/articles_controller.rb;0;2
-FILE_NAME_6=0;HTML;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/views/pages/home.html.erb;0;2
-FILE_NAME_7=148;HTML;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/views/layouts/application.html.erb;0;2
-FILE_NAME_8=0;Ruby;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/models/article.rb;0;2
-FILE_NAME_9=349;Ruby;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/models/category.rb;0;2
-FILE_NAME_10=374;Ruby;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/models/user.rb;0;2
-FILE_NAME_11=252;HTML;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/views/articles/_left_bar.html.erb;0;2
-FILE_NAME_12=516;None;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/Gemfile;0;2
+current_page=3
+FILE_NAME_0=0;Ruby;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/config/environment.rb;0;2
+FILE_NAME_1=0;Ruby;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/config/boot.rb;0;2
+FILE_NAME_2=0;Ruby;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/db/schema.rb;0;2
+FILE_NAME_3=137;HTML;0;16;1;1;0;/home/fedex/store/rubyOnRails/projects/ensaludpsi_rails/app/views/layouts/application.html.erb;0;2
 
 [build-menu]
 NF_03_LB=rails server
