@@ -3,7 +3,7 @@
 <div class="contents">
 	<p id="notice"><%= notice %></p>
 
-	<h1 class="contentTitle"><%= @article.title %></h1>
+	<h1 class="contentTitle"><%= @article.title.capitalize %></h1>
 	<% if @article.categories.any? %>
 		<div class="categories">
 			Categorías:
