@@ -30,7 +30,66 @@
 		</ul>
 	</div>
 	<% end %>
-
+	
+	<div id="messages">
+		<% if @article.messages.any? %>
+			<ul>
+				<% for msg in @article.messages do %>
+					<li class="comentario">
+						<div class="comentario-meta">
+							<!-- avatar -->
+							<h4><%= link_to msg.user.name, msg.user %></h4>
+							 <span>Hace <%= time_ago_in_words(msg.created_at) %>.</span>
+						</div>
+						<blockquote>
+							<%= markdown msg.message %>
+						</blockquote>
+					</li>
+				<% end %>
+			</ul>
+		<% end %>
+		<% if logged_in? %>
+			<h3 class="contentTitle">Escribir un comentario</h3>
+			<div class="nuevoMensaje">
+				<%= semantic_form_for @message do |f| %>
+					<%= f.inputs do %>
+						<%= f.input :article_id, :as => :hidden, :input_html => { :value => @article.id }%>
+						<%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
+						<%= f.input :message, :as => :text,:label => false  %>
+					<% end %>
+					<%= f.buttons do %>
+						<%= f.commit_button %>
+					<% end %>
+				<% end %>
+			</div>
+		<% end %>
+	</div>
+	
+	
+<!--
+	<div id="messages">
+		<% if @article.messages.any? %>
+			
+			<% for msg in @article.messages do %>
+				<div class="message">
+					<span>
+						<%= link_to msg.user.name, msg.user %>
+					</span>
+					<p class="messageContent">
+						<%= markdown msg.message %>
+					</p>
+				</div>
+			<% end %>
+			
+		<% end %>
+		<% if logged_in? %>
+			<div>
+				Escribir nuevo.
+			</div>
+		<% end %>
+	</div>
+-->
+	
 	<% if editor? && @article.users.include?(current_user) || admin?  %>
 		<%= link_to 'Editar', edit_article_path(@article) %> |
 	<% end %>

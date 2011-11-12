@@ -5,6 +5,8 @@ class Article < ActiveRecord::Base
 	has_many :authorships
 	has_many :users, :through => :authorships, :as => :authors
 	
+	has_many :messages
+	
 	attr_accessible :title, :contents
 	attr_accessible :title, :contents, :user_ids, :category_ids, :as => :editor
 	attr_accessible :title, :contents, :user_ids, :category_ids, :published, :as => :admin

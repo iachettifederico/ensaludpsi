@@ -1,0 +1,21 @@
+<div>
+	<span style="font-weight: bold;">
+		<%= link_to article.title.capitalize, article %>
+	</span>
+	<span style="color: gray; font-size: 12px; margin-left: 10px;"><br/>
+		(Modificado hace <%= time_ago_in_words(article.updated_at) %>)
+	</span>
+	<% if can_edit?(article) %>
+		<span>
+			<%= link_to "Editar", edit_article_path(article) %>
+		</span>
+	<% end %>
+	<% if admin? %>
+		| <span>
+			<%= link_to 'Eliminar', article, :confirm => 'Está seguro?', :method => :delete %>
+		</span>
+	<% end %>
+</div>
+
+
+

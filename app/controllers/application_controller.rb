@@ -42,7 +42,7 @@ class ApplicationController < ActionController::Base
 		end
 		
 		def last_articles(quantity = 10)
-			Article.order("updated_at desc").limit(quantity).find_all_by_published(true)
+			Article.order("updated_at desc").limit(quantity).find_all_by_published(true).paginate(:page => 1, :per_page => quantity)
 		end
 	
 end

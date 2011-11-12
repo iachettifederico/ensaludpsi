@@ -2,13 +2,27 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    @articles = Article.order("updated_at desc").find_all_by_published(true).paginate(:page => params[:page], :per_page => (10 unless params[:all_pages]))
+		
+		if @articles.current_page >= @articles.total_pages
+			@last_page = true
+		else
+			@last_page = false 
+		end
+			
 		@categories = Category.all
 		
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render :json => @articles }
-    end
+		if params[:layout] == 'none'
+			render :partial => @articles, :layout => nil
+		else
+			respond_to do |format|
+				format.html # index.html.erb
+				format.json { render :json => @articles } # index.json
+				format.rss
+			end
+		end
+		
+    
   end
 
   # GET /articles/1
@@ -16,6 +30,7 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
 		@categories = Category.all
+		@message = Message.new
 		
     respond_to do |format|
       format.html # show.html.erb

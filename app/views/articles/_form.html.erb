@@ -5,7 +5,11 @@
 		<%= f.buttons %>
 		<%= f.inputs do %>
 			<%= f.input :title, :label => "Título" %>
-			<%= f.input :contents, :as => :text, :label => "Contenidos", :input_html => { :class => "markItUp" } %>
+			<div class="char_counter">
+				<p style="text-align: right; color: gray;"><label>Caracteres: </label>
+				<span><%= @article.contents.nil? ? 0 : @article.contents.length %></span></p>
+				<%= f.input :contents, :as => :text, :label => "Contenidos", :input_html => { :class => "markItUp" } %>
+			</div>
 			<%= f.input :users, :label => "Autores", :collection => User.find_all_by_editor(true) %>
 			<%= f.input :categories, :label => "Categorías" %>
 			<% if admin? %>

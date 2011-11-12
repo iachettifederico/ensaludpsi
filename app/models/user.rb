@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
 	has_many :authorships
 	has_many :articles, :through => :authorships
 	
+	has_many :messages
+	
 	attr_accessible :name, :email, :password, :password_confirmation
 	attr_accessible :name, :email, :password, :password_confirmation, :admin, :editor, :article_ids, :as => :editor
 	attr_accessible :name, :email, :password, :password_confirmation, :admin, :editor, :article_ids, :as => :admin

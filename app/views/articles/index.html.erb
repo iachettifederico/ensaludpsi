@@ -3,24 +3,20 @@
 	<h2 class="contentTitle">Últimos artículos publicados</h2>
 	
 	<div class="contentBody">
-		<ul>
-			<% last_articles(10).each do |article| %>
-				<li>
-					<span style="font-weight: bold;"><%= link_to article.title.capitalize, article %></span>
-					<span style="color: gray; font-size: 12px; margin-left: 10px;"><br/>(Modificado hace <%= time_ago_in_words(article.updated_at) %>)</span>
-					<% if can_edit?(article) %>
-						<span><%= link_to "Editar", edit_article_path(article) %></span>
-					<% end %>
-					<% if admin? %>
-						| <span><%= link_to 'Eliminar', article, :confirm => 'Está seguro?', :method => :delete %></span>
-					<% end %>
-				</li>
-			<% end %>
-		</ul>
+		<div id="articulos">
+			<%= render :partial => @articles %>
+		</div>
+		
+		<% unless @last_page  %>
+			<div id="cargando">Cargando más resultados ...</div>
+			<div id="cargar_mas_articulos" class="boton">Cargar más artículos</div>
+		<% end %>
+		
 		<% if editor? || admin? %>
-			<%= link_to 'Crear artículo', new_article_path, :class => :accion %>
+			<br><%= link_to 'Crear artículo', new_article_path, :class => :accion %>
 		<% end %>
 	</div>
 </div>
+
 
 

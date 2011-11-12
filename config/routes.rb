@@ -1,4 +1,6 @@
 EnsaludpsiRails::Application.routes.draw do  
+  resources :messages
+
   resources :categories
 
   resources :articles
