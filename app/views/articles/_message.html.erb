@@ -1,0 +1,13 @@
+<li class="comentario">
+	<div class="comentario-meta">
+		<!-- avatar -->
+		<h4><%= link_to message.user.name, message.user %></h4>
+		 <span>Hace <%= time_ago_in_words(message.created_at) %>.</span>
+		 <% if admin? || current_user?(message.user) %>
+			<div><%= link_to 'Eliminar', message, :confirm => 'Está seguro?', :method => :delete %></div>
+		 <% end %>
+	</div>
+	<blockquote>
+		<%= markdown message.message %>
+	</blockquote>
+</li>

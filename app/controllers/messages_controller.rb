@@ -2,34 +2,19 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render :json => @messages }
-    end
+    redirect_to root_path
   end
 
   # GET /messages/1
   # GET /messages/1.json
   def show
-    @message = Message.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render :json => @message }
-    end
+    redirect_to root_path
   end
 
   # GET /messages/new
   # GET /messages/new.json
   def new
-    @message = Message.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render :json => @message }
-    end
+    redirect_to root_path
   end
 
   # GET /messages/1/edit
@@ -40,16 +25,17 @@ class MessagesController < ApplicationController
   # POST /messages
   # POST /messages.json
   def create
+		deny_access_unless(logged_in?)
     @message = Message.new(params[:message])
+    opts = { :as => :current_user }
     
-
     respond_to do |format|
-      if @message.save
+      if @message.save(  )
+				@message.update_attributes(params[:message], opts)
         format.html { redirect_to @message.article, :notice => 'Message was successfully created.' }
-        format.json { render :json => @message, :status => :created, :location => @message }
+        format.js 
       else
-        format.html { render :action => "new" }
-        format.json { render :json => @message.errors, :status => :unprocessable_entity }
+        format.html { redirect_to @message.article }
       end
     end
   end
@@ -58,7 +44,7 @@ class MessagesController < ApplicationController
   # PUT /messages/1.json
   def update
     @message = Message.find(params[:id])
-
+		deny_access_unless(current_user?(@message.user))
     respond_to do |format|
       if @message.update_attributes(params[:message])
         format.html { redirect_to @message, :notice => 'Message was successfully updated.' }
@@ -74,11 +60,20 @@ class MessagesController < ApplicationController
   # DELETE /messages/1.json
   def destroy
     @message = Message.find(params[:id])
+
+    deny_access_unless(current_user?(@message.user) || admin?)
+    
     @message.destroy
 
     respond_to do |format|
-      format.html { redirect_to messages_url }
+      format.html { redirect_to @message.article }
       format.json { head :ok }
     end
   end
+  
+  private
+  
+		def deny_access_unless(condition)
+			deny_access unless condition
+		end
 end

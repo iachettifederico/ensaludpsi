@@ -725,6 +725,12 @@ div.acciones{
 		color: #4D4D4D;
 		font-weight: bold;
 	}
+	
+	.comentario-meta div{
+		font-size: 84%;
+		color: #4D4D4D;
+		font-weight: bold;
+	}
 
 	blockquote{
 		position: relative;
@@ -771,10 +777,11 @@ div.acciones{
 		border-color: transparent hsla( 34, 37%, 80%, .6) transparent transparent;
 	}
 	#message_message{
-		float: right;
-		width: 80%; /* Ancho de comentario */
-		margin: 5px auto 5px 90px;
-	}
+	float: right;
+	width: 80%; /* Ancho de comentario */
+	margin: 5px auto 5px 90px;
+}
 	
 }
+
 

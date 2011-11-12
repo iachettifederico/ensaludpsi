@@ -2,13 +2,8 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.order("updated_at desc").find_all_by_published(true).paginate(:page => params[:page], :per_page => (10 unless params[:all_pages]))
+    @articles = Article.order("updated_at desc").find_all_by_published(true).paginate(:page => params[:page], :per_page => (5 unless params[:all_pages]))
 		
-		if @articles.current_page >= @articles.total_pages
-			@last_page = true
-		else
-			@last_page = false 
-		end
 			
 		@categories = Category.all
 		

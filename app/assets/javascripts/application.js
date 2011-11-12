@@ -7,3 +7,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(document).ready(function(){
+	$('#new_message').submit(function(){
+		if($('#message_message').val().length > 0){
+			jQuery.post(($(this).attr('action') + ".js"), $(this).serialize(), null, "script" );
+		}else{
+			alert("El mensaje no puede estar vacío.");
+		}
+		return false;
+	});
+});

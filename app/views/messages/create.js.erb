@@ -1,0 +1,2 @@
+$('#messages ul').append( "<%= escape_javascript(render(:partial => 'articles/message', :locals => { :message => @message })) %>" );
+$('#message_message').val('');
